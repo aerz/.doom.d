@@ -43,6 +43,7 @@
 
        :tools
        ansible
+       direnv
        magit
        lookup
        (lsp +eglot +booster)
