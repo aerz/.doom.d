@@ -32,5 +32,5 @@ Essential Doom commands to keep nearby.
 
 ** Principles
 
-- Configuration is kept minimal.
-- Startup time is kept under 1s. Every package loads on demand, never at init.
+- Configuration is kept minimal
+- Startup time is kept under 1s
