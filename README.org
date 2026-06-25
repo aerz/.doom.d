@@ -16,6 +16,15 @@ git clone --depth 1 --single-branch https://github.com/doomemacs/doomemacs ~/.co
 ~/.config/emacs/bin/doom install
 #+end_src
 
+** Commands
+
+Essential Doom commands to keep nearby.
+
+- ~doom sync~ — apply changes after editing config
+- ~doom upgrade~ — update Doom and packages
+- ~doom doctor~ — diagnose issues
+
 ** Principles
 
-Startup time is kept under 1s. Every package loads on demand, never at init. Configuration is kept minimal.
+- Configuration is kept minimal.
+- Startup time is kept under 1s. Every package loads on demand, never at init.
