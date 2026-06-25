@@ -13,7 +13,6 @@
 
   (add-hook 'ns-system-appearance-change-functions #'my/apply-theme))
 
-(use-package! doom-modeline
-  :config
+(after! doom-modeline
   (when (daemonp)
     (add-hook 'server-after-make-frame-hook #'doom-modeline-mode)))
