@@ -1,0 +1,44 @@
+#+title: Ansible Directory Local Variables
+#+author: aerz
+#+date: 2026-06-25
+
+** Overview
+
+Emacs directory-local variables let you associate LSP servers and formatters per
+project. For Ansible projects, this means auto-starting
+=ansible-language-server= for YAML files and formatting Jinja templates with
+=prettier-jinja2= via [[https://github.com/radian-software/apheleia][Apheleia]].
+
+** Configuration
+
+Place the following in =ansible/.dir-locals.el= at the root of your Ansible
+project.
+
+For more details on directory-local variables, see the [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html][Emacs manual]].
+
+#+begin_src emacs-lisp
+;;; Directory Local Variables -*- no-byte-compile: t -*-
+
+((yaml-ts-mode . ((eval . (with-eval-after-load 'eglot
+                              (add-to-list 'eglot-server-programs
+                                           '((yaml-ts-mode yaml-mode)
+                                             . (ansible-language-server "--stdio"))
+                              nil #'equal))))))
+
+((jinja2-mode . ((apheleia-formatter . prettier-jinja2))))
+#+end_src
+
+Requires the following packages:
+
+- =ansible-language-server= :: LSP server for Ansible playbooks and roles. Used
+  by Eglot to provide diagnostics, completions, and navigation for YAML files.
+- [[https://github.com/davidodenwald/prettier-plugin-jinja-template][prettier-plugin-jinja-template]] :: Prettier plugin for formatting Jinja
+  templates. Apheleia uses this to format =jinja2-mode= buffers.
+
+** References
+
+- [[https://www.gnu.org/software/emacs/manual/html_mono/eglot.html][GNU Emacs — Eglot Manual]]
+- [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html][GNU Emacs — Directory Variables]]
+- [[https://github.com/radian-software/apheleia][radian-software/apheleia]]
+- [[https://github.com/davidodenwald/prettier-plugin-jinja-template][davidodenwald/prettier-plugin-jinja-template]]
+- [[https://github.com/ansible/ansible-language-server][ansible/ansible-language-server]]

@@ -26,8 +26,9 @@ Essential Doom commands to keep nearby.
 
 ** Docs
 
-- [[file:docs/tramp-dired-perf.org][TRAMP Dired Performance]] — fix cursor lag in remote Dired buffers
+- [[file:docs/ansible-dir-locals.org][Ansible Directory Local Variables]] — LSP and formatting for Ansible projects
 - [[file:docs/references.org][References]] — links to community resources and configs
+- [[file:docs/tramp-dired-perf.org][TRAMP Dired Performance]] — fix cursor lag in remote Dired buffers
 
 ** Principles
 
