@@ -1,14 +1,12 @@
 #+title: .doom.d
 
-My personal [[https://github.com/doomemacs/doomemacs][Doom Emacs]] configuration. Built for a fast, frictionless, and best editing experience.
+My personal [[https://github.com/doomemacs/doomemacs][Doom Emacs]] configuration. Built for a fast, frictionless editing experience.
 
 ** Installation
 
 *** Emacs
 
-This config uses [[https://github.com/d12frosted/homebrew-emacs-plus][emacs-plus]] via Homebrew for native macOS features.
-
-Required dependencies managed via Nix: [[https://github.com/aerz/nix/blob/main/modules/darwin/emacs.nix][darwin/emacs.nix]], [[https://github.com/aerz/nix/blob/main/home/emacs.nix][home/emacs.nix]]
+Installed via [[https://github.com/aerz/nix][Nix]], using [[https://github.com/d12frosted/homebrew-emacs-plus][emacs-plus]] for native macOS support.
 
 *** Doom Emacs
 
@@ -17,3 +15,7 @@ git clone https://github.com/aerz/.doom.d ~/.config/doom
 git clone --depth 1 --single-branch https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 #+end_src
+
+** Principles
+
+Startup time is kept under 1s. Every package loads on demand, never at init. Configuration is kept minimal.
