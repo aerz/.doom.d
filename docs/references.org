@@ -1,0 +1,12 @@
+#+title: References
+
+** Community
+
+- [[https://github.com/orgs/doomemacs/discussions/5][Doom Emacs discussions]]
+- [[https://discourse.doomemacs.org/t/why-is-emacs-doom-slow/83][Why is Emacs/Doom slow? — Doom Discourse]]
+
+** Configurations
+
+- [[https://github.com/purcell/emacs.d][purcell/emacs.d]]
+- [[https://github.com/hlissner/.doom.d][hlissner/.doom.d]]
+- [[https://protesilaos.com][Protesilaos Stavrou]] ([[https://git.sr.ht/~protesilaos/dotfiles][dotfiles]])

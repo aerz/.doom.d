@@ -2,15 +2,16 @@
 #+author: aerz
 #+date: 2026-06-22
 
-* Overview
+** Overview
 
 Cursor movement in Dired over SSH triggers VC/project hooks that make remote
 round-trips, causing per-line lag.
 
-* Configuration
+** Configuration
 
-The [[https://github.com/doomemacs/modules/blob/8966104447d0a3131a232187bde148f58b32a322/modules/emacs/tramp/config.el][:emacs tramp]] module handles most of it (caching, async processes, ControlMaster
-hooks). The remaining fix is ensuring SSH reuses connections via ~~/.ssh/config~:
+The [[https://github.com/doomemacs/modules/blob/8966104447d0a3131a232187bde148f58b32a322/modules/emacs/tramp/config.el][:emacs tramp]] module handles most of it (caching, async processes,
+ControlMaster hooks). The remaining fix is ensuring SSH reuses connections via
+~~/.ssh/config~:
 
 #+begin_src conf
 Host *
@@ -23,7 +24,7 @@ Host *
 mkdir -p ~/.ssh/sockets
 #+end_src
 
-* References
+** References
 
 - [[https://github.com/doomemacs/modules/blob/8966104447d0a3131a232187bde148f58b32a322/modules/emacs/tramp/config.el][doomemacs/modules — :emacs tramp config.el]]
 - [[https://github.com/doomemacs/modules/blob/8966104447d0a3131a232187bde148f58b32a322/modules/emacs/vc/config.el][:emacs vc config.el]]

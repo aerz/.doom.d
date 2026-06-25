@@ -24,6 +24,11 @@ Essential Doom commands to keep nearby.
 - ~doom upgrade~ — update Doom and packages
 - ~doom doctor~ — diagnose issues
 
+** Docs
+
+- [[file:docs/tramp-dired-perf.org][TRAMP Dired Performance]] — fix cursor lag in remote Dired buffers
+- [[file:docs/references.org][References]] — links to community resources and configs
+
 ** Principles
 
 - Configuration is kept minimal.
