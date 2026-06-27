@@ -43,6 +43,7 @@
 
        :tools
        ansible
+       nix-flake-exec
        direnv
        magit
        lookup

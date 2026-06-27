@@ -1,0 +1,23 @@
+#+title: Nix Flake Exec
+#+author: aerz
+#+date: 2026-06-27
+
+Resolves executable paths from a project's Nix flake via
+=direnv exec . which=. Falls back to the bare binary name when no
+flake or direnv environment is detected.
+
+** Usage
+
+#+begin_src emacs-lisp
+;; In your config.el:
+(setq some-package-some-program
+      (lambda () (nix-flake-exec-path "terraform")))
+#+end_src
+
+=M-x nix-flake-exec-reset-cache= clears cached paths after =nix flake
+update=.
+
+** Notes
+
+Caches results per session. Only active when the project has a
+=.envrc= file and =direnv= is installed.
