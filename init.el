@@ -43,6 +43,7 @@
 
        :tools
        ansible
+       ansible-vault-inline
        nix-flake-exec
        direnv
        magit

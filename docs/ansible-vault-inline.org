@@ -1,0 +1,27 @@
+#+title: Ansible Vault Inline
+#+author: aerz
+#+date: 2026-06-27
+
+=emacs-ansible= handles whole-file vault encryption but does not
+support decrypting ~!vault~ YAML block scalars inline. This module
+adds decryption of ~!vault~ values at point.
+
+** Usage
+
+Place point on a ~!vault~ block scalar in any Ansible vars file and
+run:
+
+: M-x ansible-vault-inline-at-point
+
+Or press ~SPC m i~ (Doom's localleader keymap in ansible-mode).
+
+** Customization
+
+- =ansible-vault-inline-program= :: command or function returning the
+  path to =ansible-vault= (default: =ansible-vault=)
+- =ansible-vault-inline-password-file= :: path to vault password file,
+  script, or function returning one (default: prompt)
+
+** References
+
+- [[https://gitlab.com/emacs-ansible/emacs-ansible][k1LoW/emacs-ansible]] — the upstream =ansible-vault= integration
