@@ -30,6 +30,13 @@ Essential Doom commands to keep nearby.
 - [[file:docs/references.org][References]] — links to community resources and configs
 - [[file:docs/tramp-dired-perf.org][TRAMP Dired Performance]] — fix cursor lag in remote Dired buffers
 
+** Packages
+
+Custom Doom modules bundled in this config.
+
+- [[file:docs/ansible-vault-inline.org][ansible-vault-inline]] — decrypt !vault YAML block scalars at point
+- [[file:docs/nix-flake-exec.org][nix-flake-exec]] — resolve binary paths from Nix flakes via direnv
+
 ** Principles
 
 - Configuration is kept minimal
