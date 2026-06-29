@@ -6,7 +6,6 @@
 (use-package! poly-ansible
   :after systemd)
 
-;; Wire up ansible-vault-inline with our Nix environment
 (setq ansible-vault-inline-program
       (lambda () (nix-flake-exec-path "ansible-vault")))
 
