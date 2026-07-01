@@ -46,6 +46,7 @@
        ansible-vault-inline
        nix-flake-exec
        direnv
+       editorconfig
        magit
        lookup
        (lsp +eglot +booster)
