@@ -1,28 +1,20 @@
 ;;; lang/nix.el -*- lexical-binding: t; -*-
 
+;; Formatter for nix files
 (after! nix-mode
   (set-formatter! 'alejandra '("alejandra" "--quiet") :modes '(nix-mode)))
 
+;;  Disable LSP formatting — alejandra handles it
 (setq-hook! 'nix-mode-hook +format-with-lsp nil)
 
-;; sync env to emacs when entering a new project
+;; -----------------------------------------------------------------------------
+;; Eglot on envrc
+;; -----------------------------------------------------------------------------
+;; Ensure eglot starts when a buffer enters a direnv
+;; environment. envrc already sets buffer-local PATH and
+;; env vars — we just need to kick off the LSP client.
 (after! envrc
-  (defvar aerz--doom-env-last-dir nil)
-
-  (defun aerz/doom-sync-env ()
-    (when (eq envrc--status 'on)
-      (let ((env-dir (envrc--find-env-dir)))
-        (when (and env-dir
-                   (not (equal env-dir aerz--doom-env-last-dir)))
-          (setq aerz--doom-env-last-dir env-dir)
-          (let ((proc (start-process-shell-command
-                       "doom-sync-env" nil
-                       "doom sync --env")))
-            (set-process-sentinel
-             proc
-             (lambda (p _event)
-               (when (and (eq (process-status p) 'exit)
-                          (zerop (process-exit-status p)))
-                 (doom/reload-env)))))))))
-
-  (add-hook! 'envrc-mode-hook #'aerz/doom-sync-env))
+  (add-hook! 'envrc-mode-hook
+    (defun +aerz--eglot-on-envrc-h ()
+      (when (eq envrc--status 'on)
+        (eglot-ensure)))))
