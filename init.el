@@ -36,7 +36,8 @@
        vc
 
        :term
-       ghostel
+       ;; vterm
+       ;; ghostel
 
        :checkers
        (syntax +flymake +icons)
