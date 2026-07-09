@@ -66,5 +66,4 @@
 (load! "modules/lang/org.el")
 (load! "modules/lang/sh.el")
 (load! "modules/lang/typst.el")
-(load! "modules/tools/tree-sitter.el")
 (load! "modules/ui.el")

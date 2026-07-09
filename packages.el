@@ -9,7 +9,6 @@
 (package! systemd)
 (package! polymode)
 (package! poly-ansible)
-(package! treesit-auto)
 (package! typst-ts-mode
   :recipe (:host codeberg :repo "meow_king/typst-ts-mode"))
 (package! expreg)
