@@ -13,3 +13,9 @@
   :recipe (:host codeberg :repo "meow_king/typst-ts-mode"))
 (package! expreg)
 
+;; Upstream's autoloads call unbound `treesit-ready-p', breaking `doom sync'.
+(package! astro-ts-mode
+  :recipe (:type git
+           :repo "https://git.isincredibly.gay/srxl/astro-ts-mode.git"
+           :local-repo "astro-ts-mode"
+           :build (:not autoloads)))
