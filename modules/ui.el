@@ -7,6 +7,7 @@
 (when (eq system-type 'darwin)
   (defun my/apply-theme (appearance)
     "Apply doom theme based on macOS APPEARANCE."
+    (mapc #'disable-theme custom-enabled-themes)
     (pcase appearance
       ('light (load-theme 'doom-tomorrow-day t))
       ('dark  (load-theme 'doom-tomorrow-night t))))
