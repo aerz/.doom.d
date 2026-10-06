@@ -63,6 +63,7 @@
        (org +pandoc)
        (python +lsp +tree-sitter)
        (sh +fish +lsp)
+       (swift +lsp +tree-sitter)
        emacs-lisp
        markdown
        (nix +lsp)
