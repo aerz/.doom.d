@@ -62,6 +62,7 @@
 
 (load! "modules/lang/ansible.el")
 (load! "modules/lang/astro.el")
+(load! "modules/lang/js.el")
 (load! "modules/lang/jinja2.el")
 (load! "modules/lang/nix.el")
 (load! "modules/lang/org.el")
